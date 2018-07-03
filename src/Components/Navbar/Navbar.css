@@ -1,0 +1,14 @@
+.navbar {
+    background: purple;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.nav-message {
+    color: blue;
+}
+
+.nav-value {
+    color: gold;
+}
