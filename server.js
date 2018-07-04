@@ -18,7 +18,7 @@ app.use(express.static('client/build'));
 
 //database
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/nyt-react-scraper');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/nyt-react-scraper', { useNewUrlParser: true});
 
 //listener
 app.listen(PORT, function() {
