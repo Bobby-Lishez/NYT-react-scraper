@@ -1,18 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+// import Saved from "./Components/Saved";
+import Footer from "./Components/Footer";
+import scrape from './Scripts/scrape';
 import './App.css';
 
 class App extends Component {
+  state = {
+    stories: [
+      {
+        id: 1,
+        headline: 'no stories yet',
+        summary: "Scrape new stories or check out your saved stories",
+        url: ''
+      }
+    ]
+  }
+
+  handleScrape = () => {
+    const newStories = scrape();
+    alert(newStories);
+    this.setState({
+      stories: newStories
+    });
+  }
+
+  handleSaved = () => {
+    return 0;
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Navbar handleScrape = {this.handleScrape} handleSaved = {this.handleSaved}/>
+        <Home stories = {this.state.stories} />
+        <Footer />
       </div>
     );
   }

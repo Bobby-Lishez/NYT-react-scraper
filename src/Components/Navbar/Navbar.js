@@ -1,15 +1,15 @@
 import React from 'react';
 import './Navbar.css';
 
-const Nav = (props) => (
-    <div>
+const Navbar = (props) => (
+    <div class = 'navbar-container'>
         <nav className="navbar navbar-expand-lg">
-  <a className="navbar-brand">"News"</a>
-  <ul className = "navbar-nav mr-auto">
-    <li className = 'nav-item' onClick = "">Saved Stories</li>
-    <li className = 'nav-item' onClick = "">Scrape New Stories</li>
-  </ul>
-</nav>
+            <a className="navbar-brand">"News"</a>
+            <ul className="navbar-nav mr-auto">
+                <li className='nav-item' onClick= {props.handleSaved}>Saved Stories</li>
+                <li className='nav-item' onClick= {props.handleScrape}>Scrape New Stories</li>
+            </ul>
+        </nav>
     </div>
 );
 
