@@ -1,44 +1,22 @@
-import React, { Component } from 'react';
-import Navbar from "./Components/Navbar";
-import Home from "./Components/Home";
-// import Saved from "./Components/Saved";
-import Footer from "./Components/Footer";
-import scrape from './Scripts/scrape';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Main from "./pages/Main";
+import Saved from "./pages/Saved";
+import NoMatch from "./pages/NoMatch";
+// import Nav from "./Components/Navbar";
 
-class App extends Component {
-  state = {
-    stories: [
-      {
-        id: 1,
-        headline: 'no stories yet',
-        summary: "Scrape new stories or check out your saved stories",
-        url: ''
-      }
-    ]
-  }
-
-  handleScrape = () => {
-    const newStories = scrape();
-    alert(newStories);
-    this.setState({
-      stories: newStories
-    });
-  }
-
-  handleSaved = () => {
-    return 0;
-  }
-
-  render() {
-    return (
-      <div>
-        <Navbar handleScrape = {this.handleScrape} handleSaved = {this.handleSaved}/>
-        <Home stories = {this.state.stories} />
-        <Footer />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      {/* <Nav /> */}
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route exact path="/main" component={Main} />
+        <Route exact path="/saved" component={Saved} />
+        <Route component={NoMatch} />
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;
