@@ -4,10 +4,10 @@ import './Navbar.css';
 const Navbar = (props) => (
     <div className = 'navbar-container'>
         <nav className="navbar navbar-expand-lg">
-            <a className="navbar-brand">"News"</a>
+            <div className="navbar-brand">"News"</div>
             <ul className="navbar-nav mr-auto">
-                <li className='nav-item' onClick= {props.handleSaved}>Saved Stories</li>
-                <li className='nav-item' onClick= {props.handleScrape}>Scrape New Stories</li>
+                <li> <button className='nav-item btn-primary' onClick= {props.handleSaved}>Saved Stories</button></li>
+                <li> <button className='nav-item btn-warning' onClick= {props.handleScrape}>Scrape New Stories</button></li>
             </ul>
         </nav>
     </div>
