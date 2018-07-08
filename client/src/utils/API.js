@@ -13,10 +13,6 @@ export default {
   getSaved: function() {
     return axios.get("/api/saved");
   },
-  // Gets the book with the given id
-//   getBook: function(id) {
-//     return axios.get("/api/books/" + id);
-//   },
   // Deletes the article with the given id
   deleteArticle: function(id) {
     return axios.delete("/api/saved/" + id);

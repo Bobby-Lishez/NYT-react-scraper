@@ -5,7 +5,7 @@ import './Home.css';
 const Home = (props) => (
     <div>
        {props.stories.map( story => 
-       <Story headline = {story.headline} summary = {story.summary} url = {story.url}/>
+       <Story key = {story.id} headline = {story.headline} summary = {story.summary} url = {story.url}/>
        )}
     </div>
 );

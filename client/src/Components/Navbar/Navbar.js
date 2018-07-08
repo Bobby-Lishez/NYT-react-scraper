@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css';
 
 const Navbar = (props) => (
-    <div class = 'navbar-container'>
+    <div className = 'navbar-container'>
         <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand">"News"</a>
             <ul className="navbar-nav mr-auto">
