@@ -13,19 +13,22 @@ class Main extends Component {
         id: 1,
         headline: 'no stories yet',
         summary: "Scrape new stories or check out your saved stories",
-        url: ''
+        url: '',
+        date: ''
       },
       {
         id: 2,
         headline: 'headline',
         summary: 'summary',
-        url: 'about:blank'
+        url: 'about:blank',
+        date: ''
       },
       {
         id: 3,
         headline: 'yo',
         summary: 'hello',
-        url: ''
+        url: '',
+        date: ''
       }
     ]
   }
@@ -35,6 +38,7 @@ class Main extends Component {
       .then(res => {
         console.log(res);
         const newStories = [];
+        // eslint-disable-next-line
         res.data.response.docs.map(story => {
           const newStory = {
             id: res.data.response.docs.indexOf(story),
