@@ -4,6 +4,7 @@ import Home from "../../Components/Home";
 // import Saved from "./Components/Saved";
 import Footer from "../../Components/Footer";
 import API from '../../utils/API';
+import './Main.css';
 import '../../App';
 
 class Main extends Component {
@@ -64,6 +65,7 @@ class Main extends Component {
     return (
       <div>
         <Navbar handleScrape = {this.handleScrape} handleSaved = {this.handleSaved}/>
+        <div className = 'buffer'></div>
         <Home stories = {this.state.stories} />
         <Footer />
       </div>
